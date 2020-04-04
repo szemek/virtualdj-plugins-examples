@@ -24,7 +24,7 @@
 		01E00BDB24387FCF00FCA8C5 /* MyPlugin8.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyPlugin8.cpp; sourceTree = "<group>"; };
 		01E00BDD24387FE300FCA8C5 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		01E00BDF2438802200FCA8C5 /* vdjPlugin8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vdjPlugin8.h; sourceTree = "<group>"; };
-		01E00BE02438811600FCA8C5 /* vdjVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vdjVideo.h; sourceTree = "<group>"; };
+		01E00BE02438811600FCA8C5 /* vdjVideo8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vdjVideo8.h; sourceTree = "<group>"; };
 		01E00BE12438812B00FCA8C5 /* vdjDsp8.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vdjDsp8.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,7 +91,7 @@
 				01E00BDB24387FCF00FCA8C5 /* MyPlugin8.cpp */,
 				01E00BDD24387FE300FCA8C5 /* Main.cpp */,
 				01E00BDF2438802200FCA8C5 /* vdjPlugin8.h */,
-				01E00BE02438811600FCA8C5 /* vdjVideo.h */,
+				01E00BE02438811600FCA8C5 /* vdjVideo8.h */,
 				01E00BE12438812B00FCA8C5 /* vdjDsp8.h */,
 			);
 			name = Source;
