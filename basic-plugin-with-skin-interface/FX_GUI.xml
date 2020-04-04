@@ -1,0 +1,58 @@
+<Skin name="MyPlugin8" version="8" width="220" height="200" >
+    <Copyright>Atomix Productions </copyright>
+
+    <textzone visibility="get_deck 'master' ? false : true">
+        <size width="51" height="14"/>
+        <pos x="115" y="10"/>
+        <text font="arial" size="13" weight="bold" color="#898989" align="left" format="DECK `get_deck`"/>
+    </textzone>
+
+    <textzone visibility="get_deck 'master' ? true : false">
+        <size width="51" height="14"/>
+        <pos x="115" y="10"/>
+        <text font="arial" size="13" weight="bold" color="#898989" align="left" format="MASTER"/>
+    </textzone>
+
+    <button action="effect active">
+        <tooltip>Activate Effect</Tooltip>
+        <size width="15" height="15"/>
+        <pos x="11" y="8"/>
+        <up x="+0" y="+0"/>
+        <selected x="+0" y="+200"/>
+        <over x="+0" y="+200"/>
+        <overselected x="+0" y="+200"/>
+        <down x="+0" y="+200"/>
+    </button>
+
+    <button action="effect_show_gui" >
+        <Tooltip>Close</tooltip>
+        <pos x="189" y="7"/>
+        <size width="19" height="18"/>
+        <up x="+0" y="+0"/>
+        <over x="+0" y="+200"/>
+    </button>
+
+    <button action="effect_dock_gui" >
+        <Tooltip>Dock Effect</tooltip>
+        <pos x="166" y="6"/>
+        <size width="19" height="18"/>
+        <up x="+0" y="+0"/>
+        <over x="+0" y="+200"/>
+    </button>
+
+    <slider action="effect slider 1" orientation="round" >
+        <pos x="31" y="49" width="37" height="37"/>
+        <clipmask x="5" y="425"/>
+        <fader>
+            <pos x="5" y="235" nb="25" nbx="5" smooth="true"/>
+        </fader>
+    </slider>
+
+    <textzone >
+        <size width="51" height="14"/>
+        <pos x="23" y="89"/>
+        <up x="+0" y="515"/>
+        <text font="arial" size="14" weight="bold" color="white" align="center" action="get_effect_slider_text 1"/>
+    </textzone>
+
+</Skin>
