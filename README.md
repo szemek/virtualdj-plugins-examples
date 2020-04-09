@@ -5,6 +5,7 @@ Examples of source code:
  * [Basic plugin (with skin interface)](basic-plugin-with-skin-interface)
  * [Audio plugin (DSP) - Example 1](audio-plugin-dsp-example-1) / [Audio plugin (DSP) - Example 2](audio-plugin-dsp-example-2)
  * [Audio plugin (Buffer DSP)](audio-plugin-buffer-dsp)
+ * [Video FX plugin](video-fx-plugin)
 
 Examples are copied and adapted from official documentation.
 
