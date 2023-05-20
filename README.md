@@ -7,10 +7,11 @@ Examples of source code:
  * [Audio plugin (Buffer DSP)](audio-plugin-buffer-dsp)
  * [Video FX plugin](video-fx-plugin)
  * [Video Transition plugin](video-transition-plugin)
+ * [Online Source plugin](online-source-plugin)
 
 Examples are copied and adapted from official documentation.
 
-**Tested on XCode 10.1 and macOS 10.13.**
+**Tested on XCode 14.3 and macOS 13.3.**
 
  ## Documentation
 

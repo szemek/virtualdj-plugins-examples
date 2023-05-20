@@ -24,19 +24,19 @@
 class IVdjPluginDsp8 : public IVdjPlugin8
 {
 public:
-    // called when the plugin is started or stopped
-    virtual HRESULT VDJ_API OnStart() {return 0;}
-    virtual HRESULT VDJ_API OnStop() {return 0;}
+	// called when the plugin is started or stopped
+	virtual HRESULT VDJ_API OnStart() {return 0;}
+	virtual HRESULT VDJ_API OnStop() {return 0;}
 
-    // This function will be called each time VirtualDJ needs your plugin
-    // to be applied on a new sound buffer
-    // NOTE: samples are stereo, so you need to process up to buffer[2*nb]
-    virtual HRESULT VDJ_API OnProcessSamples(float *buffer, int nb)=0;
+	// This function will be called each time VirtualDJ needs your plugin
+	// to be applied on a new sound buffer
+	// NOTE: samples are stereo, so you need to process up to buffer[2*nb]
+	virtual HRESULT VDJ_API OnProcessSamples(float *buffer, int nb)=0;
 
-    // Some useful variables
-    int SampleRate;            // samplerate of the audio engine
-    int SongBpm;            // number of samples between two consecutive beats for this song
-    double SongPosBeats;    // number of beats from the first beat in the song
+	// Some useful variables
+	int SampleRate;			// samplerate of the audio engine
+	int SongBpm;			// number of samples between two consecutive beats for this song
+	double SongPosBeats;	// number of beats from the first beat in the song
 };
 
 //////////////////////////////////////////////////////////////////////////
@@ -45,33 +45,45 @@ public:
 class IVdjPluginBufferDsp8 : public IVdjPlugin8
 {
 public:
-    // called when the plugin is started or stopped
-    virtual HRESULT VDJ_API OnStart() {return 0;}
-    virtual HRESULT VDJ_API OnStop() {return 0;}
+	// called when the plugin is started or stopped
+	virtual HRESULT VDJ_API OnStart() {return 0;}
+	virtual HRESULT VDJ_API OnStop() {return 0;}
 
-    // This function will be called each time VirtualDJ needs your plugin
-    // to be applied on a new sound buffer
-    // NOTE: samples are stereo, so you need to process up to buffer[2*nb]
-    virtual short * VDJ_API OnGetSongBuffer(int songPos, int nb)=0;
+	// This function will be called each time VirtualDJ needs your plugin
+	// to be applied on a new sound buffer
+	// NOTE: samples are stereo, so you need to process up to buffer[2*nb]
+	virtual short * VDJ_API OnGetSongBuffer(int songPos, int nb)=0;
 
-    // Call this to get the buffer at the specified position
-    HRESULT GetSongBuffer(int pos, int nb, short **buffer) {return cb->GetSongBuffer(pos, nb, buffer);}
+	// Call this to get the buffer at the specified position
+	HRESULT GetSongBuffer(int pos, int nb, short **buffer) {return cb->GetSongBuffer(pos, nb, buffer);}
 
-    // Some useful variables
-    int SampleRate;            // samplerate of the song
-    int SongBpm;            // number of samples between two consecutive beats for this song
-    int SongPos;            // number of samples from beginning of song
-    double SongPosBeats;    // number of beats from the first beat in the song
+	// Some useful variables
+	int SampleRate;			// samplerate of the song
+	int SongBpm;			// number of samples between two consecutive beats for this song
+	int SongPos;			// number of samples from beginning of song
+	double SongPosBeats;	// number of beats from the first beat in the song
 };
 
-class IVdjPluginPositionDsp8 : public IVdjPluginBufferDsp8
+class IVdjPluginPositionDsp8 : public IVdjPlugin8
 {
 public:
-    //When called, songPos can be modified
-    virtual HRESULT VDJ_API OnTransformPosition(double *songPos, double *videoPos)=0;
+	// called when the plugin is started or stopped
+	virtual HRESULT VDJ_API OnStart() { return 0; }
+	virtual HRESULT VDJ_API OnStop() { return 0; }
 
-    //Unused at the moment
-    virtual short * VDJ_API OnGetSongBuffer(int songPos, int nb) override { return NULL; }
+	//When called, songPos can be modified
+	virtual HRESULT VDJ_API OnTransformPosition(double *songPos, double *videoPos, float *volume, float *srcVolume) = 0;
+
+	// This function will be called each time VirtualDJ needs your plugin
+	// to be applied on a new sound buffer
+	// NOTE: samples are stereo, so you need to process up to buffer[2*nb]
+	virtual HRESULT VDJ_API OnProcessSamples(float *buffer, int nb) { return 0; }
+
+	// Some useful variables
+	int SampleRate;			// samplerate of the audio engine
+	int SongBpm;			// number of samples between two consecutive beats for this song
+	int SongPos;			// number of samples from beginning of song
+	double SongPosBeats;	// number of beats from the first beat in the song
 };
 
 //////////////////////////////////////////////////////////////////////////
