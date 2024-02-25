@@ -63,3 +63,14 @@ HRESULT VDJ_API CMyPlugin8::OnContextMenu(const char* uniqueId, size_t menuIndex
     // }
     return S_OK;
 }
+
+HRESULT VDJ_API CMyPlugin8::GetFolderContextMenu(const char *folderUniqueId, IVdjContextMenu *contextMenu)
+{
+    contextMenu->add("GetFolderContextMenu");
+    return S_OK;
+}
+
+HRESULT VDJ_API CMyPlugin8::OnFolderContextMenu(const char *folderUniqueId, size_t menuIndex)
+{
+    return S_OK;
+}
