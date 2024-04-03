@@ -48,6 +48,16 @@ HRESULT VDJ_API CMyPlugin8::GetStreamUrl(const char* uniqueId, IVdjString& url, 
     return S_OK;
 }
 
+HRESULT VDJ_API CMyPlugin8::GetFolderList(IVdjSubfoldersList* subfoldersList)
+{
+    return S_OK;
+}
+
+HRESULT VDJ_API CMyPlugin8::GetFolder(const char* folderUniqueId, IVdjTracksList* tracksList)
+{
+    return S_OK;
+}
+
 HRESULT VDJ_API CMyPlugin8::GetContextMenu(const char* uniqueId, IVdjContextMenu* contextMenu)
 {
     contextMenu->add("Open in CMyPlugin8");
